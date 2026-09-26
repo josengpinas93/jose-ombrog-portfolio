@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jose D. Ombrog Jr. | Administrative & Office Support Specialist</title>
-  <!-- Google Fonts: Oswald (racing-style) & Inter (clean body) -->
+  <!-- Google Fonts: Oswald & Inter & Noto Serif for Greek -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -32,17 +32,18 @@
       --gray: #6E6E6E;
       --light-gray: #B0B0B0;
       --off-white: #E8E8E8;
+      --soft-white: #F5F5F5;
+      --very-light: #FAFAFA;
       --white: #FFFFFF;
 
       --font-display: 'Oswald', sans-serif;
       --font-body: 'Inter', sans-serif;
 
-      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
-      --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.5);
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.1);
       --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-      /* Checkered pattern */
       --checker-size: 24px;
     }
 
@@ -56,8 +57,8 @@
       font-family: var(--font-body);
       font-size: 16px;
       line-height: 1.7;
-      color: var(--off-white);
-      background-color: var(--black);
+      color: var(--mid-gray);
+      background-color: var(--very-light);
     }
 
     h1, h2, h3, h4, h5 {
@@ -66,7 +67,7 @@
       line-height: 1.15;
       letter-spacing: 0.02em;
       text-transform: uppercase;
-      color: var(--white);
+      color: var(--black);
     }
 
     a {
@@ -81,33 +82,6 @@
 
     ul {
       list-style: none;
-    }
-
-    /* ============================================================
-       CHECKERED PATTERN UTILITY
-       ============================================================ */
-    .checker-bg {
-      background-image:
-        linear-gradient(45deg, var(--black) 25%, transparent 25%),
-        linear-gradient(-45deg, var(--black) 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, var(--black) 75%),
-        linear-gradient(-45deg, transparent 75%, var(--black) 75%);
-      background-size: var(--checker-size) var(--checker-size);
-      background-position: 0 0, 0 calc(var(--checker-size) / 2), calc(var(--checker-size) / 2) calc(var(--checker-size) / -2), calc(var(--checker-size) / -2) 0;
-    }
-
-    .checker-strip {
-      height: 12px;
-      width: 100%;
-      background-image:
-        linear-gradient(45deg, var(--white) 25%, transparent 25%),
-        linear-gradient(-45deg, var(--white) 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, var(--white) 75%),
-        linear-gradient(-45deg, transparent 75%, var(--white) 75%);
-      background-size: 12px 12px;
-      background-position: 0 0, 0 6px, 6px -6px, -6px 0;
-      background-color: var(--black);
-      opacity: 0.9;
     }
 
     /* ============================================================
@@ -128,17 +102,17 @@
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(10, 10, 10, 0.95);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--dark-gray);
+      border-bottom: 1px solid var(--off-white);
       transition: var(--transition);
     }
 
     header.scrolled {
-      background: rgba(10, 10, 10, 0.99);
+      background: rgba(255, 255, 255, 0.99);
       box-shadow: var(--shadow-md);
-      border-bottom-color: var(--mid-gray);
+      border-bottom-color: #DDDDDD;
     }
 
     .header-inner {
@@ -148,7 +122,7 @@
       padding: 16px 0;
     }
 
-      .logo {
+    .logo {
       display: flex;
       align-items: center;
       gap: 12px;
@@ -157,46 +131,7 @@
       font-weight: 700;
       letter-spacing: 0.04em;
       text-transform: none;
-      color: var(--white);
-    }
-
-    .logo-mark {
-      width: 40px;
-      height: 40px;
-      border: 2px solid var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      font-weight: 700;
       color: var(--black);
-      background: var(--white);
-      font-family: var(--font-display);
-      letter-spacing: 0.05em;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .logo-mark::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image:
-        linear-gradient(45deg, var(--black) 25%, transparent 25%),
-        linear-gradient(-45deg, var(--black) 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, var(--black) 75%),
-        linear-gradient(-45deg, transparent 75%, var(--black) 75%);
-      background-size: 10px 10px;
-      background-position: 0 0, 0 5px, 5px -5px, -5px 0;
-      opacity: 0.15;
-    }
-
-    .logo-mark span {
-      position: relative;
-      z-index: 1;
     }
 
     nav ul {
@@ -211,7 +146,7 @@
       font-weight: 500;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--light-gray);
+      color: var(--gray);
       position: relative;
       padding: 4px 0;
       transition: color var(--transition);
@@ -224,12 +159,12 @@
       left: 0;
       width: 0;
       height: 1.5px;
-      background: var(--white);
+      background: var(--black);
       transition: width var(--transition);
     }
 
     nav a:hover {
-      color: var(--white);
+      color: var(--black);
     }
 
     nav a:hover::after {
@@ -239,8 +174,8 @@
     .menu-toggle {
       display: none;
       background: none;
-      border: 1.5px solid var(--mid-gray);
-      color: var(--white);
+      border: 1.5px solid var(--light-gray);
+      color: var(--black);
       font-size: 1.1rem;
       padding: 8px 12px;
       cursor: pointer;
@@ -248,15 +183,15 @@
     }
 
     .menu-toggle:hover {
-      border-color: var(--white);
-      background: var(--dark-gray);
+      border-color: var(--black);
+      background: var(--soft-white);
     }
 
     /* ============================================================
        HERO SECTION
        ============================================================ */
     .hero {
-      background: var(--black);
+      background: linear-gradient(180deg, var(--white) 0%, var(--soft-white) 100%);
       padding: 160px 0 100px;
       position: relative;
       overflow: hidden;
@@ -273,10 +208,10 @@
       width: 45%;
       height: 100%;
       background-image:
-        linear-gradient(45deg, rgba(255,255,255,0.03) 25%, transparent 25%),
-        linear-gradient(-45deg, rgba(255,255,255,0.03) 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.03) 75%),
-        linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.03) 75%);
+        linear-gradient(45deg, rgba(0,0,0,0.04) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(0,0,0,0.04) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(0,0,0,0.04) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(0,0,0,0.04) 75%);
       background-size: 40px 40px;
       background-position: 0 0, 0 20px, 20px -20px, -20px 0;
       pointer-events: none;
@@ -289,7 +224,7 @@
       left: 0;
       width: 100%;
       height: 8px;
-      background: var(--white);
+      background: var(--black);
       z-index: 3;
     }
 
@@ -311,7 +246,7 @@
       font-weight: 500;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--light-gray);
+      color: var(--gray);
       margin-bottom: 28px;
     }
 
@@ -320,13 +255,13 @@
       display: block;
       width: 48px;
       height: 2px;
-      background: var(--white);
+      background: var(--black);
     }
 
     .hero h1 {
       font-size: 4rem;
       font-weight: 700;
-      color: var(--white);
+      color: var(--black);
       margin-bottom: 24px;
       line-height: 1.05;
       letter-spacing: 0.01em;
@@ -334,7 +269,7 @@
 
     .hero h1 .outline {
       color: transparent;
-      -webkit-text-stroke: 2px var(--white);
+      -webkit-text-stroke: 2px var(--black);
       display: inline-block;
     }
 
@@ -343,7 +278,7 @@
       font-size: 1rem;
       font-weight: 400;
       letter-spacing: 0.3em;
-      color: var(--gray);
+      color: var(--light-gray);
       margin-bottom: 16px;
       display: block;
     }
@@ -351,7 +286,7 @@
     .hero-divider {
       width: 80px;
       height: 3px;
-      background: var(--white);
+      background: var(--black);
       margin-bottom: 28px;
       position: relative;
     }
@@ -363,15 +298,15 @@
       top: 0;
       width: 80px;
       height: 3px;
-      background: var(--mid-gray);
+      background: var(--light-gray);
     }
 
     .hero-description {
       font-size: 1.05rem;
-      color: var(--light-gray);
+      color: var(--mid-gray);
       margin-bottom: 40px;
       max-width: 560px;
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1.85;
     }
 
@@ -399,31 +334,30 @@
       overflow: hidden;
     }
 
-    .btn-white {
-      background: var(--white);
-      color: var(--black);
-      border: 2px solid var(--white);
+    .btn-black {
+      background: var(--black);
+      color: var(--white);
+      border: 2px solid var(--black);
     }
 
-    .btn-white:hover {
+    .btn-black:hover {
       background: transparent;
-      color: var(--white);
+      color: var(--black);
       transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     }
 
     .btn-ghost {
       background: transparent;
-      border: 2px solid var(--mid-gray);
-      color: var(--white);
+      border: 2px solid var(--black);
+      color: var(--black);
     }
 
     .btn-ghost:hover {
-      border-color: var(--white);
-      background: var(--white);
-      color: var(--black);
+      background: var(--black);
+      color: var(--white);
       transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     }
 
     .hero-portrait {
@@ -437,7 +371,8 @@
       width: 340px;
       height: 420px;
       position: relative;
-      border: 2px solid var(--white);
+      border: 2px solid var(--black);
+      background: var(--white);
     }
 
     .portrait-frame::before {
@@ -447,7 +382,7 @@
       left: -12px;
       width: 100%;
       height: 100%;
-      border: 2px solid var(--mid-gray);
+      border: 2px solid var(--light-gray);
       z-index: -1;
     }
 
@@ -459,20 +394,20 @@
       width: 100px;
       height: 100px;
       background-image:
-        linear-gradient(45deg, var(--white) 25%, transparent 25%),
-        linear-gradient(-45deg, var(--white) 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, var(--white) 75%),
-        linear-gradient(-45deg, transparent 75%, var(--white) 75%);
+        linear-gradient(45deg, var(--black) 25%, transparent 25%),
+        linear-gradient(-45deg, var(--black) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, var(--black) 75%),
+        linear-gradient(-45deg, transparent 75%, var(--black) 75%);
       background-size: 20px 20px;
       background-position: 0 0, 0 10px, 10px -10px, -10px 0;
-      background-color: var(--black);
+      background-color: var(--white);
       opacity: 0.6;
     }
 
     .portrait-img {
       width: 100%;
       height: 100%;
-      background: var(--charcoal);
+      background: var(--soft-white);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -483,7 +418,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: grayscale(30%);   /* 30% gray, 70% color */
+      filter: contrast(1.05) saturate(1.1);
     }
 
     .portrait-placeholder {
@@ -491,7 +426,7 @@
       font-size: 7rem;
       font-weight: 700;
       color: transparent;
-      -webkit-text-stroke: 2px var(--white);
+      -webkit-text-stroke: 2px var(--black);
       letter-spacing: 0.05em;
     }
 
@@ -503,23 +438,17 @@
       position: relative;
     }
 
-    .section-dark {
-      background: var(--near-black);
+    .section-white {
+      background: var(--white);
     }
 
-    .section-darker {
-      background: var(--black);
+    .section-light {
+      background: var(--soft-white);
     }
 
     .section-header {
       max-width: 720px;
       margin-bottom: 64px;
-    }
-
-    .section-header.centered {
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
     }
 
     .section-label {
@@ -531,7 +460,7 @@
       font-weight: 500;
       letter-spacing: 0.24em;
       text-transform: uppercase;
-      color: var(--light-gray);
+      color: var(--gray);
       margin-bottom: 20px;
     }
 
@@ -540,11 +469,7 @@
       display: block;
       width: 36px;
       height: 2px;
-      background: var(--white);
-    }
-
-    .section-header.centered .section-label::before {
-      display: none;
+      background: var(--black);
     }
 
     .section-title {
@@ -552,13 +477,13 @@
       font-weight: 700;
       margin-bottom: 20px;
       letter-spacing: 0.02em;
-      color: var(--white);
+      color: var(--black);
     }
 
     .section-desc {
       font-size: 1rem;
       color: var(--gray);
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1.8;
     }
 
@@ -574,9 +499,9 @@
 
     .about-content p {
       margin-bottom: 22px;
-      color: var(--light-gray);
+      color: var(--mid-gray);
       font-size: 1rem;
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1.85;
     }
 
@@ -585,21 +510,21 @@
     }
 
     .about-content strong {
-      color: var(--white);
+      color: var(--black);
       font-weight: 600;
-      border-bottom: 1px solid var(--mid-gray);
+      border-bottom: 1px solid var(--light-gray);
     }
 
     .about-stats {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2px;
-      background: var(--dark-gray);
-      border: 2px solid var(--dark-gray);
+      background: var(--off-white);
+      border: 2px solid var(--off-white);
     }
 
     .stat-block {
-      background: var(--charcoal);
+      background: var(--white);
       padding: 36px 24px;
       text-align: center;
       transition: var(--transition);
@@ -607,19 +532,19 @@
     }
 
     .stat-block:hover {
-      background: var(--white);
+      background: var(--black);
     }
 
     .stat-block:hover .stat-number,
     .stat-block:hover .stat-label {
-      color: var(--black);
+      color: var(--white);
     }
 
     .stat-number {
       font-family: var(--font-display);
       font-size: 2.6rem;
       font-weight: 700;
-      color: var(--white);
+      color: var(--black);
       display: block;
       line-height: 1;
       margin-bottom: 10px;
@@ -643,12 +568,12 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2px;
-      background: var(--dark-gray);
-      border: 2px solid var(--dark-gray);
+      background: var(--off-white);
+      border: 2px solid var(--off-white);
     }
 
     .skill-item {
-      background: var(--charcoal);
+      background: var(--white);
       padding: 44px 32px;
       transition: var(--transition);
       position: relative;
@@ -662,7 +587,7 @@
       left: 0;
       width: 0;
       height: 3px;
-      background: var(--white);
+      background: var(--black);
       transition: width var(--transition);
       z-index: 2;
     }
@@ -672,7 +597,7 @@
     }
 
     .skill-item:hover {
-      background: var(--near-black);
+      background: var(--soft-white);
     }
 
     .skill-number {
@@ -683,44 +608,44 @@
       font-size: 2.5rem;
       font-weight: 700;
       color: transparent;
-      -webkit-text-stroke: 1px var(--dark-gray);
+      -webkit-text-stroke: 1px var(--off-white);
       line-height: 1;
       transition: var(--transition);
     }
 
     .skill-item:hover .skill-number {
-      -webkit-text-stroke-color: var(--mid-gray);
+      -webkit-text-stroke-color: var(--light-gray);
     }
 
     .skill-icon {
       width: 52px;
       height: 52px;
-      border: 2px solid var(--mid-gray);
+      border: 2px solid var(--light-gray);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.2rem;
-      color: var(--white);
+      color: var(--black);
       margin-bottom: 24px;
       transition: var(--transition);
     }
 
     .skill-item:hover .skill-icon {
-      border-color: var(--white);
-      background: var(--white);
-      color: var(--black);
+      border-color: var(--black);
+      background: var(--black);
+      color: var(--white);
     }
 
     .skill-item h4 {
       font-size: 1.1rem;
       margin-bottom: 10px;
-      color: var(--white);
+      color: var(--black);
     }
 
     .skill-item p {
       font-size: 0.9rem;
       color: var(--gray);
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1.7;
     }
 
@@ -736,13 +661,13 @@
       grid-template-columns: 220px 1fr;
       gap: 48px;
       padding: 48px 0;
-      border-bottom: 1px solid var(--dark-gray);
+      border-bottom: 1px solid var(--off-white);
       transition: var(--transition);
       position: relative;
     }
 
     .experience-item:first-child {
-      border-top: 1px solid var(--dark-gray);
+      border-top: 1px solid var(--off-white);
     }
 
     .experience-item::before {
@@ -752,7 +677,7 @@
       top: 0;
       width: 0;
       height: 100%;
-      background: rgba(255, 255, 255, 0.02);
+      background: rgba(0, 0, 0, 0.02);
       transition: width var(--transition);
       z-index: -1;
     }
@@ -777,7 +702,7 @@
       font-weight: 500;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--white);
+      color: var(--black);
       margin-bottom: 10px;
       display: block;
     }
@@ -785,7 +710,7 @@
     .exp-company {
       font-size: 0.88rem;
       color: var(--gray);
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1.5;
       display: flex;
       align-items: center;
@@ -794,20 +719,20 @@
 
     .exp-company i {
       font-size: 0.75rem;
-      color: var(--mid-gray);
+      color: var(--light-gray);
     }
 
     .exp-body h3 {
       font-size: 1.4rem;
       margin-bottom: 14px;
-      color: var(--white);
+      color: var(--black);
       letter-spacing: 0.02em;
     }
 
     .exp-body p {
       font-size: 0.96rem;
-      color: var(--light-gray);
-      font-weight: 300;
+      color: var(--mid-gray);
+      font-weight: 400;
       line-height: 1.8;
     }
 
@@ -818,12 +743,12 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2px;
-      background: var(--dark-gray);
-      border: 2px solid var(--dark-gray);
+      background: var(--off-white);
+      border: 2px solid var(--off-white);
     }
 
     .achievement-card {
-      background: var(--charcoal);
+      background: var(--white);
       padding: 44px 32px;
       position: relative;
       transition: var(--transition);
@@ -837,14 +762,14 @@
       left: 0;
       width: 100%;
       height: 3px;
-      background: var(--white);
+      background: var(--black);
       transform: scaleX(0);
       transform-origin: left;
       transition: transform var(--transition);
     }
 
     .achievement-card:hover {
-      background: var(--near-black);
+      background: var(--soft-white);
     }
 
     .achievement-card:hover::after {
@@ -853,20 +778,20 @@
 
     .achievement-icon {
       font-size: 1.6rem;
-      color: var(--white);
+      color: var(--black);
       margin-bottom: 24px;
     }
 
     .achievement-card h4 {
       font-size: 1.1rem;
       margin-bottom: 12px;
-      color: var(--white);
+      color: var(--black);
     }
 
     .achievement-card p {
       font-size: 0.9rem;
       color: var(--gray);
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1.7;
     }
 
@@ -877,39 +802,39 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2px;
-      background: var(--dark-gray);
-      border: 2px solid var(--dark-gray);
+      background: var(--off-white);
+      border: 2px solid var(--off-white);
     }
 
     .edu-card {
-      background: var(--charcoal);
+      background: var(--white);
       padding: 44px 32px;
       position: relative;
       transition: var(--transition);
-      border-top: 3px solid var(--white);
+      border-top: 3px solid var(--black);
     }
 
     .edu-card:hover {
-      background: var(--white);
+      background: var(--black);
     }
 
     .edu-card:hover h4,
     .edu-card:hover .edu-school,
     .edu-card:hover .edu-year,
     .edu-card:hover .edu-icon {
-      color: var(--black);
+      color: var(--white);
     }
 
     .edu-icon {
       font-size: 1.5rem;
-      color: var(--white);
+      color: var(--black);
       margin-bottom: 24px;
       transition: var(--transition);
     }
 
     .edu-card h4 {
       font-size: 1.15rem;
-      color: var(--white);
+      color: var(--black);
       margin-bottom: 10px;
       transition: var(--transition);
     }
@@ -918,7 +843,7 @@
       font-size: 0.88rem;
       color: var(--gray);
       margin-bottom: 6px;
-      font-weight: 300;
+      font-weight: 400;
       transition: var(--transition);
     }
 
@@ -928,7 +853,7 @@
       font-weight: 500;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--light-gray);
+      color: var(--mid-gray);
       transition: var(--transition);
     }
 
@@ -936,10 +861,11 @@
        CONTACT SECTION
        ============================================================ */
     .contact-section {
-      background: var(--black);
+      background: var(--white);
       padding: 110px 0;
       position: relative;
       overflow: hidden;
+      border-top: 1px solid var(--off-white);
     }
 
     .contact-section::before {
@@ -950,10 +876,10 @@
       width: 100%;
       height: 100%;
       background-image:
-        linear-gradient(45deg, rgba(255,255,255,0.02) 25%, transparent 25%),
-        linear-gradient(-45deg, rgba(255,255,255,0.02) 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.02) 75%),
-        linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.02) 75%);
+        linear-gradient(45deg, rgba(0,0,0,0.02) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(0,0,0,0.02) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(0,0,0,0.02) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(0,0,0,0.02) 75%);
       background-size: 60px 60px;
       background-position: 0 0, 0 30px, 30px -30px, -30px 0;
       pointer-events: none;
@@ -976,7 +902,7 @@
     }
 
     .contact-section .section-title {
-      color: var(--white);
+      color: var(--black);
       font-size: 2.6rem;
       margin-bottom: 20px;
     }
@@ -1003,30 +929,30 @@
 
     .contact-detail i {
       font-size: 1.3rem;
-      color: var(--white);
+      color: var(--black);
       margin-bottom: 4px;
     }
 
     .contact-detail span,
     .contact-detail a {
       font-size: 0.92rem;
-      color: var(--light-gray);
-      font-weight: 300;
+      color: var(--mid-gray);
+      font-weight: 400;
       transition: color var(--transition);
     }
 
     .contact-detail a:hover {
-      color: var(--white);
+      color: var(--black);
     }
 
     /* ============================================================
        FOOTER
        ============================================================ */
     footer {
-      background: var(--near-black);
+      background: var(--black);
       padding: 48px 0 32px;
-      border-top: 1px solid var(--dark-gray);
       position: relative;
+      color: var(--off-white);
     }
 
     footer::before {
@@ -1044,7 +970,7 @@
       background-size: 12px 12px;
       background-position: 0 0, 0 6px, 6px -6px, -6px 0;
       background-color: var(--black);
-      opacity: 0.5;
+      opacity: 0.8;
     }
 
     .footer-inner {
@@ -1076,7 +1002,7 @@
       font-weight: 400;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--gray);
+      color: var(--light-gray);
       transition: color var(--transition);
     }
 
@@ -1113,7 +1039,7 @@
       padding-top: 24px;
       border-top: 1px solid var(--dark-gray);
       font-size: 0.75rem;
-      color: var(--mid-gray);
+      color: var(--gray);
       letter-spacing: 0.06em;
       font-family: var(--font-display);
       text-transform: uppercase;
@@ -1199,10 +1125,11 @@
         top: 100%;
         left: 0;
         width: 100%;
-        background: var(--black);
-        border-top: 1px solid var(--dark-gray);
+        background: var(--white);
+        border-top: 1px solid var(--off-white);
         display: none;
         padding: 20px 0;
+        box-shadow: var(--shadow-md);
       }
 
       nav.active {
@@ -1222,7 +1149,7 @@
       nav a {
         display: block;
         padding: 14px 0;
-        border-bottom: 1px solid var(--dark-gray);
+        border-bottom: 1px solid var(--off-white);
       }
 
       nav a::after {
@@ -1368,7 +1295,7 @@
           A detail-oriented administrative professional with over nine years of experience in records management, office documentation, inventory coordination, and client support — dedicated to accuracy, organization, and operational efficiency.
         </p>
         <div class="hero-actions">
-          <a href="#contact" class="btn btn-white">
+          <a href="#contact" class="btn btn-black">
             <i class="fas fa-paper-plane"></i> Get in Touch
           </a>
           <a href="#experience" class="btn btn-ghost">
@@ -1389,7 +1316,7 @@
   <!-- ============================================================
        ABOUT
        ============================================================ -->
-  <section class="section section-dark" id="about">
+  <section class="section section-white" id="about">
     <div class="container">
       <div class="section-header reveal">
         <div class="section-label">01 — About</div>
@@ -1435,7 +1362,7 @@
   <!-- ============================================================
        SKILLS
        ============================================================ -->
-  <section class="section section-darker" id="skills">
+  <section class="section section-light" id="skills">
     <div class="container">
       <div class="section-header reveal">
         <div class="section-label">02 — Capabilities</div>
@@ -1488,7 +1415,7 @@
   <!-- ============================================================
        EXPERIENCE
        ============================================================ -->
-  <section class="section section-dark" id="experience">
+  <section class="section section-white" id="experience">
     <div class="container">
       <div class="section-header reveal">
         <div class="section-label">03 — Career</div>
@@ -1498,7 +1425,6 @@
         </p>
       </div>
       <div class="experience-list reveal">
-        <!-- 1 -->
         <div class="experience-item">
           <div class="exp-meta">
             <span class="exp-date">2024 – 2025</span>
@@ -1509,7 +1435,6 @@
             <p>Managed and documented over 30 client inquiries daily via phone and email, ensuring accurate data recording and timely issue resolution. Maintained audit-ready communication logs and coordinated with technical and billing teams for follow-ups. Prepared reports and promoted additional services based on client needs.</p>
           </div>
         </div>
-        <!-- 2 -->
         <div class="experience-item">
           <div class="exp-meta">
             <span class="exp-date">Freelance</span>
@@ -1520,7 +1445,6 @@
             <p>Performed detailed documentation work by accurately coding time stamps for raw video footage. Prepared on-screen titles, captions, and headlines while maintaining strict adherence to project requirements and documentation standards for Charlton Media Group.</p>
           </div>
         </div>
-        <!-- 3 -->
         <div class="experience-item">
           <div class="exp-meta">
             <span class="exp-date">2023</span>
@@ -1531,7 +1455,6 @@
             <p>Encoded all delivered raw materials and updated stock cards to maintain precise inventory records at Bonpack Corporation. Verified material details against job orders before release, prepared monthly inventory summaries, conducted reconciliation, and maintained organized filing for material issuances and transfer lists. Handled calls and emails for material requests.</p>
           </div>
         </div>
-        <!-- 4 -->
         <div class="experience-item">
           <div class="exp-meta">
             <span class="exp-date">2021 – 2023</span>
@@ -1542,7 +1465,6 @@
             <p>Prepared and documented sensitive inventory items based on provided lists at Pharmaserv Express. Coordinated with auditors during cycle counts and contributed to regulatory compliance documentation. Monitored inventory levels, recorded cold room data, and maintained operational records in compliance with company standards.</p>
           </div>
         </div>
-        <!-- 5 -->
         <div class="experience-item">
           <div class="exp-meta">
             <span class="exp-date">2018 – 2021</span>
@@ -1553,7 +1475,6 @@
             <p>Entered daily outbound transaction data into SAP and generated internal inventory reports at Advance Food Concepts Mfg. Inc. Supported warehouse documentation needs, ensuring completeness and accuracy. Prepared picklists for production use, handled internal coordination requests, and conducted month-end and year-end inventory counts.</p>
           </div>
         </div>
-        <!-- 6 -->
         <div class="experience-item">
           <div class="exp-meta">
             <span class="exp-date">2016 – 2017</span>
@@ -1571,7 +1492,7 @@
   <!-- ============================================================
        ACHIEVEMENTS
        ============================================================ -->
-  <section class="section section-darker" id="achievements">
+  <section class="section section-light" id="achievements">
     <div class="container">
       <div class="section-header reveal">
         <div class="section-label">04 — Recognition</div>
@@ -1603,7 +1524,7 @@
   <!-- ============================================================
        EDUCATION
        ============================================================ -->
-  <section class="section section-dark" id="education">
+  <section class="section section-white" id="education">
     <div class="container">
       <div class="section-header reveal">
         <div class="section-label">05 — Credentials</div>
@@ -1663,7 +1584,7 @@
           <span>Marikina City, Philippines</span>
         </div>
       </div>
-      <a href="mailto:joseombrog93@gmail.com" class="btn btn-white reveal">
+      <a href="mailto:joseombrog93@gmail.com" class="btn btn-black reveal">
         <i class="fas fa-envelope"></i> Send an Email
       </a>
     </div>
